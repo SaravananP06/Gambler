@@ -1,6 +1,6 @@
 package Day7.BridgeLabz;
 /*
- * This program Gambler, will bet $1
+ * This program checking if gambler win or loose
  */
 
 public class Gambler {
@@ -12,16 +12,12 @@ public class Gambler {
 		 */
 		int stake = 100;
 		int bet = 1;
-		/*
-		 * Random variable to see win or loose
-		 */
-		double win = Math.floor(Math.random() * 10) % 2;
+		
 		/*
 		 * betting $1 from stake
 		 */
 		System.out.println("Betting $1 from stake "+ stake);
-		System.out.println("remaining stake: "+(stake -= bet));
-		
+		System.out.println("remaining stake: "+(stake -= bet));	
 	}
 
 }
