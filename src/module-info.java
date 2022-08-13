@@ -1,0 +1,9 @@
+/**
+ * 
+ */
+/**
+ * @author Saravanan
+ *
+ */
+module GamblingSimulator {
+}
