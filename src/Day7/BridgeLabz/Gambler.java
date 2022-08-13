@@ -26,11 +26,9 @@ public class Gambler {
 		if (win == 1) {
 			stake += (bet *2);
 			System.out.println("Congratulations! You won $1");
-			System.out.println("After winning, stake = "+stake);
 		}else {
 			System.out.println("Sorry! You loose $1");
-			System.out.println("After loosing, stake = "+stake);
-		}
+		}System.out.println("The stake we have: "+stake);
 	}
 
 }
