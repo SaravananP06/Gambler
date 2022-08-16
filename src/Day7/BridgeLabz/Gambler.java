@@ -1,4 +1,8 @@
 package Day7.BridgeLabz;
+
+import java.util.Dictionary;
+import java.util.Hashtable;
+
 /*
  * This program If gambler won or lost 50% of the stake,
  * would resign for the day
@@ -7,6 +11,7 @@ package Day7.BridgeLabz;
 
 public class Gambler {
 	public static final int NUM_OF_DAYS = 20;
+	public static final int MONTHS = 12;
 	public static final int BET = 1;
 
 	public static void main(String[] args) {
@@ -15,43 +20,37 @@ public class Gambler {
 		 * Variables
 		 */
 		int stake = 100;
-		int round = 0;
+		int trials = 100;			
 		for (int day = 1; day<=NUM_OF_DAYS; day++) {
-			System.out.println("Day "+day);
-			int trials = stake;
+			trials = stake;
 			/*
 			 * Taking while loop with condition won or lost 50% of the stake
 			 */
 			while ((stake > (trials/2)) && stake < (trials+(trials/2))) {
-				round++;
-				System.out.println("round "+round);
 				/*
 				 * betting $1 from stake
 				 */
-				System.out.println("Betting $1 from stake "+ stake);
-				System.out.println("remaining stake: "+(stake -= BET));	
+				stake -= BET;	
 				/*
 				 * Random variable for win or loose
 				 */
 				int win = (int) Math.floor(Math.random() * 10) % 2;
-				if (win == 1) {
+				switch (win) {
+				case 1:
 					stake += (BET *2);
-					System.out.println("Congratulations! You won $1");
-				}else {
-					System.out.println("Sorry! You loose $1");
-				}System.out.println("The stake we have: "+stake);
-				
-				
+					break;
+				default:
+					break;
+				}
 			}
-			System.out.println("Resigning for the day with stake $"+ stake);
-			
 			if (stake > trials) {
-				System.out.println("Won $"+Math.abs(trials - stake)+" for day " +day);
-			}else {
-				System.out.println("Loose $"+Math.abs(trials - stake)+" for day " +day);
+				System.out.println("Day# Gambling Day: " + day + " Won: " + Math.abs(trials - stake));
+			}else { 
+				System.out.println("Day# Gambling Day: " + day + " Loose: " + Math.abs(trials - stake));
 			}
 		
 		}
 	}
+
 
 }
